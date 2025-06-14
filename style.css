@@ -29,3 +29,10 @@ p {
     font-size: 2rem;
     text-align: left;
 }
+#slideshow-header {
+  width: 100vw;
+  height: 50vh; /* Adjust as needed */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
