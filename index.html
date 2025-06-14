@@ -8,27 +8,55 @@
 </head>
 <body>
 
-    <header id="slideshow-header">
-        <h1>Hello World btw i kinda hate ya :333</h1>
-    </header>
-    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Slideshow</title>
+    <style>
+        #slideshow {
+            width: 600px;
+            height: 400px;
+            margin: auto;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="slideshow"></div>
+
     <script>
-    const images = [];
-    for (let i = 1; i <= 12; i++) {
-      images.push(`image(${i}).jpg`);
-    }
+        // Fetch the list of images from the server
+        fetch('getImages.php')
+            .then(response => response.json())
+            .then(images => {
+                if (images.length === 0) {
+                    console.error('No images found in the directory.');
+                    return;
+                }
 
-    let currentIndex = 0;
-    const header = document.getElementById('slideshow-header');
+                let currentIndex = 0;
+                const slideshow = document.getElementById('slideshow');
 
-    function changeBackground() {
-      header.style.backgroundImage = `url('${images[currentIndex]}')`;
-      currentIndex = (currentIndex + 1) % images.length;
-    }
+                // Function to change the background image
+                function changeBackground() {
+                    slideshow.style.backgroundImage = `url('${images[currentIndex]}')`;
+                    currentIndex = (currentIndex + 1) % images.length;
+                }
 
-    setInterval(changeBackground, 5000);
-    changeBackground(); // start immediately
-  </script>
+                // Initialize the slideshow
+                changeBackground();
+                setInterval(changeBackground, 5000); // Change image every 5 seconds
+            })
+            .catch(error => {
+                console.error('Error fetching images:', error);
+            });
+    </script>
+</body>
+</html>
+
 
 
     <img src="https://media.discordapp.net/attachments/1043043878145622046/1383258540361252864/image.png?ex=684e2367&is=684cd1e7&hm=5a9fcdd45c81c94d496000df0a4a787f3523e7d9a340a30c6e26f5e6f960210c&=&format=webp&quality=lossless&width=374&height=133">
