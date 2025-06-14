@@ -8,8 +8,27 @@
 </head>
 <body>
 
+    <header id="slideshow-header">
+        <h1>Hello World btw i kinda hate ya :333</h1>
+    </header>
     
-    <h1>Hello World btw i kinda hate ya :333</h1>
+    <script>
+    const images = [];
+    for (let i = 1; i <= 12; i++) {
+      images.push(`image(${i}).jpg`);
+    }
+
+    let currentIndex = 0;
+    const header = document.getElementById('slideshow-header');
+
+    function changeBackground() {
+      header.style.backgroundImage = `url('${images[currentIndex]}')`;
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    setInterval(changeBackground, 5000);
+    changeBackground(); // start immediately
+  </script>
 
 
     <img src="https://media.discordapp.net/attachments/1043043878145622046/1383258540361252864/image.png?ex=684e2367&is=684cd1e7&hm=5a9fcdd45c81c94d496000df0a4a787f3523e7d9a340a30c6e26f5e6f960210c&=&format=webp&quality=lossless&width=374&height=133">
