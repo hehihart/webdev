@@ -1,4 +1,10 @@
-
+body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-family: 'Noto Sans', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+}
 
 h1 {
     color: red;
@@ -11,4 +17,15 @@ p {
     color: rgb(255, 255, 255);
     text-align: left;
     font-size: 0.8rem;
+}
+
+.spiral {
+    color; 
+    animation: spin 1s linear infinite;
+}
+
+#bruh {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    text-align: left;
 }
