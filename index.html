@@ -8,19 +8,38 @@
 </head>
 <body>
     <h1>Hello World btw i kinda hate ya :333</h1>
+    <header id="slideshow-header"></header>
+    <script>
+        const images = [];
+        for (let i = 1; i <= 12; i++) {
+            images.push(`image(${i}).jpg`);
+        }
 
-    <img src="https://media.discordapp.net/attachments/1043043878145622046/1383258540361252864/image.png?ex=684e2367&is=684cd1e7&hm=5a9fcdd45c81c94d496000df0a4a787f3523e7d9a340a30c6e26f5e6f960210c&=&format=webp&quality=lossless&width=374&height=133">
-    <p>Hi! I'm a SpiralFlip Big Fun!! I came to this server because of SpiralFlip,
-         and my dream is to become like SpiralFlip in future! because SpiralFlip is one of the best Fantasy composers of all time!
-          SpiralFlip could do anything! I hope I will get to SpiralFlip level one day. I super hope that SpiralFlip will see this post 
-          and reply, because that is the biggest pleasure in life to be mentioned by SpiralFlip. If SpiralFlip says to me that my music
-           is cool, I will Spiral into Flip, and become SpiralFlip, like, of course, I will never because SpiralFlip, because SpiralFlip 
-           is SpiralFlip, when me is not SpiralFlip. But I hope that in future, my SpiralFlipness will become as big as it's possible, 
-           because everyone should look at SpiralFlip, and just dream of touching the ideal, SpiralFlip, SpiralFlip, SpiralFlip !!!!</p>
+        let currentIndex = 0;
+        const header = document.getElementById('slideshow-header');
 
-    <p class="spiral">SpiralFlip is the best, SpiralFlip is the coolest, SpiralFlip is the most SpiralFlippingest of all time!</p>
+        function changeBackground() {
+            header.style.backgroundImage = `url('${images[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
 
-    <h3 id="bruh">SpiralFlip's Music</h3>
-    <a href="https://youtu.be/087-Aa4xKYo?si=JDaZXpqgf1KWHusM" target="_blank">SpiralFlip - SpiralFlip</a>
+        setInterval(changeBackground, 5000);
+        changeBackground(); // start immediately
+    </script>
+    <script>
+        <img src="https://media.discordapp.net/attachments/1043043878145622046/1383258540361252864/image.png?ex=684e2367&is=684cd1e7&hm=5a9fcdd45c81c94d496000df0a4a787f3523e7d9a340a30c6e26f5e6f960210c&=&format=webp&quality=lossless&width=374&height=133">
+        <p>Hi! I'm a SpiralFlip Big Fun!! I came to this server because of SpiralFlip,
+            and my dream is to become like SpiralFlip in future! because SpiralFlip is one of the best Fantasy composers of all time!
+            SpiralFlip could do anything! I hope I will get to SpiralFlip level one day. I super hope that SpiralFlip will see this post 
+            and reply, because that is the biggest pleasure in life to be mentioned by SpiralFlip. If SpiralFlip says to me that my music
+            is cool, I will Spiral into Flip, and become SpiralFlip, like, of course, I will never because SpiralFlip, because SpiralFlip 
+            is SpiralFlip, when me is not SpiralFlip. But I hope that in future, my SpiralFlipness will become as big as it's possible, 
+            because everyone should look at SpiralFlip, and just dream of touching the ideal, SpiralFlip, SpiralFlip, SpiralFlip !!!!</p>
+
+        <p class="spiral">SpiralFlip is the best, SpiralFlip is the coolest, SpiralFlip is the most SpiralFlippingest of all time!</p>
+
+        <h3 id="bruh">SpiralFlip's Music</h3>
+        <a href="https://youtu.be/087-Aa4xKYo?si=JDaZXpqgf1KWHusM" target="_blank">SpiralFlip - SpiralFlip</a>
+    </script>
 </body>
 </html>
